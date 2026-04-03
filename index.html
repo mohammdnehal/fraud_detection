@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 200px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🚗 Insurance Fraud Detection System</h2>
+
+    <form action="/predict" method="post">
+
+        <input type="number" name="age" placeholder="Age" required><br>
+
+        <select name="insured_sex">
+            <option value="">Select Gender</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br>
+
+        <input type="number" name="policy_annual_premium" placeholder="Annual Premium"><br>
+
+        <input type="number" name="incident_hour_of_the_day" placeholder="Incident Hour (0-23)"><br>
+
+        <input type="number" name="number_of_vehicles_involved" placeholder="Vehicles Involved"><br>
+
+        <select name="incident_severity_Major Damage">
+            <option value="">Major Damage?</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
